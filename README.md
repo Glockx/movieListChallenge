@@ -1,5 +1,5 @@
 # Movie List Challenge
-A simple self-development challenge application which aimed to learn "**The Composable Architecture**" basics and build reactive structed project.
+A simple self-development challenge application that aimed to learn **"The Composable Architecture"** basics and build a reactive structured project.
 ## Used Architecture and Libraries
 
  - [The Composable Architecture](https://github.com/pointfreeco/swift-composable-architecture#the-composable-architecture)
