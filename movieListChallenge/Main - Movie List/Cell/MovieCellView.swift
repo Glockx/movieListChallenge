@@ -77,10 +77,11 @@ class MovieCellView: UIView {
         subTitleLabel.text = "Release Date: " + (model.releaseDate ?? "N/A")
         // Set Moive Poster
         self.backgroundImage.contentMode = .scaleAspectFill
-        backgroundImage.sd_setImage(with: .init(string: "https://image.tmdb.org/t/p/w500\(model.posterPath ?? "")")!) { [weak self] image, _, _, _ in
+        backgroundImage.sd_setImage(with: .init(string: "https://image.tmdb.org/t/p/w780\(model.posterPath ?? "")")!) { [weak self] image, _, _, _ in
             guard let self = self else { return }
             DispatchQueue.main.async {
                 if let image = image {
+                    self.backgroundImage.contentMode = .scaleAspectFill
                     self.backgroundImage.image = image
                 }else{
                     self.backgroundImage.contentMode = .scaleAspectFit

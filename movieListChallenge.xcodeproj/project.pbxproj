@@ -42,6 +42,7 @@
 		3182DA1727211A6400BDE6A2 /* MovieDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailsViewController.swift; sourceTree = "<group>"; };
 		318FC1FF2721211D0067AB30 /* AnimatedReloadAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatedReloadAnimator.swift; sourceTree = "<group>"; };
 		318FC2032721392A0067AB30 /* MovieSearchResultModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieSearchResultModel.swift; sourceTree = "<group>"; };
+		318FC20527215E6F0067AB30 /* Secrets.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Secrets.xcconfig; sourceTree = "<group>"; };
 		3199E355271FF33D0080E77F /* movieListChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = movieListChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3199E358271FF33D0080E77F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3199E35A271FF33D0080E77F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -113,6 +114,7 @@
 		3199E34C271FF33D0080E77F = {
 			isa = PBXGroup;
 			children = (
+				318FC20527215E6F0067AB30 /* Secrets.xcconfig */,
 				3199E357271FF33D0080E77F /* movieListChallenge */,
 				3199E356271FF33D0080E77F /* Products */,
 				BB5AA33BC4A36727AD084837 /* Pods */,
@@ -405,6 +407,7 @@
 /* Begin XCBuildConfiguration section */
 		3199E367271FF33F0080E77F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 318FC20527215E6F0067AB30 /* Secrets.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -466,6 +469,7 @@
 		};
 		3199E368271FF33F0080E77F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 318FC20527215E6F0067AB30 /* Secrets.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;

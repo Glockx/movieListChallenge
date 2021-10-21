@@ -84,7 +84,7 @@ class MovieDetailsViewController: UIViewController {
         containerView.addSubview(movieDescriptionLabel)
 
         // Configure Movie Details
-        posterImage.sd_setImage(with: .init(string: "https://image.tmdb.org/t/p/w500\(movieModel.posterPath ?? "")")!) { [weak self] image, _, _, _ in
+        posterImage.sd_setImage(with: .init(string: "https://image.tmdb.org/t/p/w780\(movieModel.posterPath ?? "")")!) { [weak self] image, _, _, _ in
             guard let self = self else { return }
             if let image = image {
                 self.posterImage.image = image.sd_roundedCornerImage(withRadius: 10, corners: .allCorners, borderWidth: 0, borderColor: .none)

@@ -15,8 +15,10 @@ class MovieService {
 
     typealias UpcomingMoviesListResponse = Effect<MoviesUpcomingModel, ErrorModel>
     typealias MovieSearchResponse = Effect<MovieSearchResultModel, ErrorModel>
+    // API Key
+    static var apiKey = (Bundle.main.object(forInfoDictionaryKey: "API_KEY") as? String) ?? ""
     // Provider
-    static var provider = MoyaProvider<MovieDBService>(plugins: [AuthPlugin(token: "c088f706aee23675f058bec7e3cd2695")])
+    static var provider = MoyaProvider<MovieDBService>(plugins: [AuthPlugin(token: apiKey)])
 
     // MARK: - Get Upcoming Movies
 
