@@ -16,6 +16,7 @@ struct AuthPlugin: PluginType {
     func prepare(_ request: URLRequest, target: TargetType) -> URLRequest {
         var request = request
         request.url = request.url?.appending("api_key", value: token)
+        request.url = request.url?.appending("language", value: Locale.preferredLanguages.first ?? "en-US")
         return request
     }
 }

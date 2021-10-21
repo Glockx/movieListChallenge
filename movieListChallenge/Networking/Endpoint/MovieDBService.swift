@@ -10,8 +10,9 @@ import Moya
 
 enum MovieDBService {
     case fetchMoviesGenres
-    case fetchUpcomingMovies(page: Int)
+    case fetchLatestMovies(page: Int)
     case searchMovie(query: String, page: Int)
+    case getMovieDetails(movieID: Int)
 }
 
 extension MovieDBService: TargetType {
@@ -23,16 +24,18 @@ extension MovieDBService: TargetType {
         switch self {
         case .fetchMoviesGenres:
             return "/genre/movie/list"
-        case .fetchUpcomingMovies:
-            return "/movie/upcoming"
+        case .fetchLatestMovies:
+            return "/movie/now_playing"
         case .searchMovie:
             return "/search/movie"
+        case .getMovieDetails:
+            return "/movie"
         }
     }
 
     var method: Moya.Method {
         switch self {
-        case .fetchMoviesGenres, .fetchUpcomingMovies, .searchMovie:
+        case .fetchMoviesGenres, .fetchLatestMovies, .searchMovie, .getMovieDetails:
             return .get
         }
     }
@@ -41,10 +44,12 @@ extension MovieDBService: TargetType {
         switch self {
         case .fetchMoviesGenres:
             return .requestPlain
-        case let .fetchUpcomingMovies(page: page):
+        case let .fetchLatestMovies(page: page):
             return .requestParameters(parameters: ["page": page], encoding: URLEncoding.queryString)
         case let .searchMovie(query: query, page: page):
             return .requestParameters(parameters: ["query": query, "page": page], encoding: URLEncoding.queryString)
+        case let .getMovieDetails(movieID: movieID):
+            return .requestParameters(parameters: ["movie_id": movieID], encoding: URLEncoding.queryString)
         }
     }
 
@@ -52,5 +57,3 @@ extension MovieDBService: TargetType {
         return ["Content-type": "application/json"]
     }
 }
-
-
